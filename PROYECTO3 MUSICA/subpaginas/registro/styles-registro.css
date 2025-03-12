@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0;                /* Elimina el margen externo predeterminado del body */
+    padding: 0;               /* Elimina el relleno interno predeterminado del body */
+    background:linear-gradient(90deg,#c9ddd1, #92c2b8, #57a6ad, #0088aa, #166f94, #1c577c, #1a4065, #142b4e);  /* Crea un degradado de colores horizontal para el fondo */
+    background-size: cover;   /* Hace que el fondo cubra todo el elemento */
+    background-attachment: fixed;  /* Fija el fondo para que no se desplace al hacer scroll */
+    height: 100vh;            /* Establece la altura al 100% del viewport (pantalla visible) */
+    font-family: sans-serif;  /* Define la fuente predeterminada sin serifas */
+}
+
+* {
+    border: 0;                /* Elimina todos los bordes por defecto */
+    margin: 0;                /* Elimina todos los márgenes por defecto */
+    padding: 0;               /* Elimina todos los rellenos por defecto */
+    box-sizing: border-box;   /* Hace que el ancho y alto incluyan el padding y border */
+    font-family: "Poppins", sans-serif;  /* Define la fuente para todos los elementos */
+}
+
+.header {
+    position: fixed;          /* Fija el encabezado en su posición, no se mueve al hacer scroll */
+    top: 0;                   /* Lo coloca en la parte superior */
+    left: 0;                  /* Lo coloca en el extremo izquierdo */
+    width: 100%;              /* Ocupa todo el ancho disponible */
+    padding: 20px 100px;      /* Añade relleno vertical y horizontal */
+    background: rgba(255, 255, 255, 0.1);  /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);  /* Aplica un efecto de desenfoque al fondo */
+    display: flex;            /* Utiliza flexbox para organizar los elementos internos */
+    justify-content: space-between;  /* Distribuye los elementos con espacio entre ellos */
+    align-items: center;      /* Centra verticalmente los elementos */
+    z-index: 100;             /* Controla la superposición, valor más alto aparece por encima */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Añade una sombra sutil debajo */
+}
+
+.logo {
+    font-size: 32px;          /* Tamaño de la fuente */
+    color: #142b4e;           /* Color del texto */
+    text-decoration: none;    /* Elimina el subrayado */
+    font-weight: 700;         /* Grosor de la fuente (negrita) */
+    text-shadow: 0 0 50px #0088aa;  /* Añade un efecto de sombra al texto */
+    margin-top: 10px;         /* Espacio en la parte superior */
+}
+
+.navbar a {
+    position: relative;       /* Establece posicionamiento relativo para los efectos */
+    font-size: 18px;          /* Tamaño de la fuente */
+    color: #ffffff;           /* Color del texto */
+    font-weight: 500;         /* Grosor de la fuente (semi-negrita) */
+    text-decoration: none;    /* Elimina el subrayado */
+    margin-left: 40px;        /* Espacio a la izquierda para separar los enlaces */
+}
+
+.navbar a::before {
+    content: '';              /* Crea un elemento pseudo antes del enlace */
+    position: absolute;       /* Lo posiciona de forma absoluta respecto al enlace */
+    top: 100%;                /* Lo coloca justo debajo del enlace */
+    left: 0;                  /* Alineado a la izquierda */
+    width: 0;                 /* Inicialmente sin ancho */
+    height: 2px;              /* Con 2px de altura */
+    background: #ffffff;      /* Color blanco */
+    transition: .3s;          /* Añade transición suave de 0.3 segundos */
+}
+
+.navbar a:hover::before {
+    width: 100%;              /* Al pasar el ratón, el ancho se expande al 100% */
+}
+
+.contact-form{
+    position: absolute;       /* Posicionamiento absoluto respecto al elemento padre */
+    top: 50%;                 /* Se posiciona al 50% del borde superior */
+    left: 50%;                /* Se posiciona al 50% del borde izquierdo */
+    transform: translate(-50%, -50%);  /* Centra el elemento usando transformación */
+    align-content: center;    /* Centra el contenido en el eje vertical */
+    text-align: center;       /* Centra el texto horizontalmente */
+    justify-content: center;  /* Centra elementos en el eje horizontal */
+    width: 400px;             /* Ancho fijo del formulario */
+    height: 500px;            /* Alto fijo del formulario */
+    padding: 80px 40px;       /* Relleno interno (arriba/abajo, izquierda/derecha) */
+    box-sizing: border-box;   /* Incluye padding y border en el ancho/alto total */
+    border-radius: 10px;      /* Bordes redondeados */
+    backdrop-filter: blur 50px;  /* Aplica un efecto de desenfoque al fondo */
+}
+
+.contact-form h2{
+    margin: 0;                /* Elimina los márgenes externos */
+    padding: 0 0 20px;        /* Relleno interno (arriba, lados, abajo) */
+    color: #91dbfe;           /* Color del texto */
+    text-align: center;       /* Centra el texto horizontalmente */
+    text-transform: uppercase;  /* Convierte texto a mayúsculas */
+    font-size: 30px;          /* Tamaño de la fuente */
+    font-family: poppins;     /* Tipo de fuente */
+}
+
+.contact-form p{
+    margin: 10px;             /* Margen externo en todos los lados */
+    padding: 19px;            /* Relleno interno en todos los lados */
+    font-weight: bold;        /* Texto en negrita */
+    color: #91dbfe;           /* Color del texto */
+    font-family: poppins;     /* Tipo de fuente */
+}
+
+.contact-form input{
+    border: none;             /* Elimina el borde */
+    border-bottom: 2px solid #91dbfe;  /* Añade borde solo en la parte inferior */
+    width: 90%;               /* Ancho del 90% del contenedor */
+    padding: 10px;            /* Relleno interno en todos los lados */
+    margin-bottom: 42px;      /* Margen inferior */
+    font-size: 14px;          /* Tamaño de la fuente */
+    font-weight: bold;        /* Texto en negrita */
+    background-color: transparent;  /* Fondo transparente */
+    color: #ffffff;           /* Color del texto */
+    outline: none;            /* Elimina el contorno al hacer focus */
+    padding: 10px;            /* Relleno interno en todos los lados (repetido) */
+    margin: 8px 0;            /* Margen superior e inferior */
+    display: inline-block;    /* Comportamiento de bloque en línea */
+    border: none;             /* Elimina el borde (repetido) */
+    border-radius: 19px;      /* Bordes redondeados */
+    background-color: #ffffff;  /* Color de fondo (sobreescribe el transparente anterior) */
+    font-family: poppins;     /* Tipo de fuente */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="password"]{
+    height: 40px;             /* Altura fija */
+    font-size: 16px;          /* Tamaño de la fuente */
+    color: #0076b6;           /* Color del texto */
+}
+
+.rem{
+    text-align: center;       /* Centra el texto horizontalmente */
+    color: #91dbfe(255, 255, 255) !important;  /* Color del texto con alta prioridad (nota: formato incorrecto) */
+    font-size: 16px;          /* Tamaño de la fuente */
+    text-decoration: underline;  /* Subraya el texto */
+}
+
+input[type="checkbox"]{
+    width: 20px;              /* Ancho del checkbox */
+}
+
+.boton-jugar {
+    width: 200px;             /* Ancho fijo del botón */
+    font-size: 20px;          /* Tamaño de la fuente */
+    color: rgb(255, 255, 255);  /* Color del texto (blanco) */
+    background-color: transparent;  /* Fondo transparente */
+    border: 2px solid #ffffff;  /* Borde blanco */
+    border-radius: 50px;      /* Bordes muy redondeados */
+    cursor: pointer;          /* Cambia el cursor a mano al pasar por encima */
+    transition: all 0.1s ease-in;  /* Transición suave para todos los cambios */
+    font-family: 'Poppins', sans-serif;  /* Tipo de fuente */
+}
+
+button {
+    margin-top: 20px;         /* Margen superior */
+    height: 50px;             /* Altura fija */
+    padding: px;              /* Valor de padding incompleto */
+}
+
+.boton-jugar:hover {
+    background-color:#142b4e;  /* Cambia el color de fondo al pasar el ratón */
+    color: #ffffff;           /* Mantiene el color del texto */
+    box-shadow:0px 0px 5px #142b4e;  /* Añade sombra al pasar el ratón */
+    border: 2px solid #142b4e;  /* Cambia el color del borde */
+}
+
+.pfp {
+    border-radius: 50%;       /* Hace la imagen circular */
+    height: 80px;             /* Altura fija */
+}

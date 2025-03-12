@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+* {
+    margin: 0; /* PARA QUITAR EL MARGEN DE LA IZQUIERDA, DERECHA, ARRIBA Y ABAJO */
+    padding: 0; /* PARA QUITAR EL MARGEN DE LA IZQUIERDA Y DERECHA */
+}
+html, body {
+    height: 100%; /* Ocupa el 100% de la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+    overflow: hidden; /* Evita que el difuminado se extienda */
+}
+
+.fondo{
+    position: fixed; /* Fija el fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../../imagenes-intro/DTMF.jpg); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position-y: 90%; /* Ajusta la posición vertical */
+    filter: blur(10px); /* Aplica el desenfoque */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.contenedor-foto-guiones-teclado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-foto{
+    text-align: center;
+    margin-top: 90px;
+}
+
+.contenedor-foto img {
+    align-items: center;
+    justify-content: center;
+    height: 350px; /* Mantiene la proporción de la imagen */
+    width: 350px;  /* Mantiene la proporción de la imagen */
+    border-radius: 10%; 
+}
+/* Contenedor de los guiones */
+.contenedor-guiones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los guiones */
+    margin-top: 50px;
+}
+
+/* Estilo de cada guion */
+.guion {
+    font-size: 24px; /* Tamaño de los guiones */
+    font-weight: bold; /* Grosor de la fuente */
+    color: #ffffff; /* Color de los guiones */
+    text-shadow: 
+        -1px -1px 0 #2e5f00,  
+         1px -1px 0 #2e5f00,
+        -1px  1px 0 #2e5f00,
+         1px  1px 0 #2e5f00; /* Borde negro alrededor del texto */
+}
+.teclado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los guiones */
+    margin-top: 50px;
+    
+}
+.letras{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Altura del contenedor */
+    width: 60px; /* Ancho del contenedor */
+}
+.letras img{
+    width: 35px; /* Ancho de la imagen */
+    height: 35px; /* Alto de la imagen */
+    mix-blend-mode: multiply; /* Hacer que el fondo de la foto no sea blanco */
+}

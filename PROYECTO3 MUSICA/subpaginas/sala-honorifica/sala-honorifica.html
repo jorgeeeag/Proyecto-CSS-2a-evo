@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sala Honorifica.</title>
+<link rel="icon" href="../../imagenes/barra-logo.png"image/x-icon"> 
+<link rel="stylesheet" href="../sala-honorifica/styles-sala-honorifica.css">
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="logo"><img src="../../imagenes/logo.png" width="70px" style=" margin-bottom: 10px;"></a>
+        <nav class="navbar">
+            <a href="../../index.html">Inicio</a>
+            <a href="../../subpaginas/sobre-nosotros/sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="../../subpaginas/registro/registro.html">Registrate</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <br>
+        <p>Top<p style="color: #142b4e;">Jorge.</p></p>
+        <p class="text p">"Bathing Beach" de Novo Amor, "Hit Me Hard and Soft" de Billie Eilish y "Slowdive" de Slowdive destacan por su <br>capacidad de transmitir emociones profundas. El primero envuelve con su folk etéreo y nostálgico, el segundo <br>impacta con su producción innovadora y letras íntimas, y el tercero revive el shoegaze con melodías envolventes. <br>Tres álbumes que transportan y emocionan, dejando una marca imborrable.</p>
+        <div class="card__container">
+            <article class="card__article">
+
+                <img src="../../imagenes/fotos-sala-honorifica/batching-beach-novo-amor.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+
+                    <span class="card__description">Novo Amor</span>
+                    <h2 class="card__title">Batching Beach</h2>
+
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudio()" width="30px" height="30px">
+                    <audio id="sonido" src="../../audios/canciones-sala-honorifica/anchor-novo-amor.mp3"></audio>
+
+                    <script>
+                        function toggleAudio() {
+                        var audio = document.getElementById('sonido');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/4vGuMdwnxc6X8izbVS6MTN" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+            <article class="card__article">
+
+                <img src="../../imagenes/fotos-sala-honorifica/hit-me-hard-and-soft-billie-eilish.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+
+                    <span class="card__description">Billie Eilish</span>
+                    <h2 class="card__title">HIT ME HARD AND SOFT</h2>
+
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioBillie()" width="30px" height="30px">
+                    <audio id="billie" src="../../audios/canciones-sala-honorifica/billie-eilish-birds-of-a-feather.mp3"></audio>
+                    <script>
+                        function toggleAudioBillie() {
+                        var audio = document.getElementById('billie');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/7aJuG4TFXa2hmE4z1yxc3n" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/slowdive-slowdive.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Slowdive</span>
+                    <h2 class="card__title">Slowdive</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioSlowdive()" width="30px" height="30px">
+                    <audio id="slowdive" src="../../audios/canciones-sala-honorifica/slowdive-star-roving.mp3"></audio>
+                    <script>
+                        function toggleAudioSlowdive() {
+                        var audio = document.getElementById('slowdive');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/1qDA0jVhj4ZTjGHmpbmmwa" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <div class="container">
+        <br>
+        <p>Top<p style="color: #1c577c;">Silvia.</p></p>
+        <p class="text p">"Decide" de Djo, "The Slow Rush" de Tame Impala y "Lost in the Dream" de The War on Drugs destacan por su innovación<br> y profundidad. Djo fusiona synth-pop y psicodelia con un aire nostálgico, Tame Impala transforma el tiempo <br>en sonido con texturas hipnóticas, y The War on Drugs reinventa el rock atmosférico con guitarras envolventes. <br>Tres álbumes que transportan y emocionan con su producción impecable.</p>
+        <div class="card__container">
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/decide-djo.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Djo</span>
+                    <h2 class="card__title">DECIDE</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioDjo()" width="30px" height="30px">
+                    <audio id="Djo" src="../../audios/canciones-sala-honorifica/djo-i-want-your-video.mp3"></audio>
+                    <script>
+                        function toggleAudioDjo() {
+                        var audio = document.getElementById('Djo');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/4JDXBZdRPId4devseaAOKH?si=g2QtgLwOR8mDfAjwy3tumw" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/the-showr-rush-tame-impala.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Tame Impala</span>
+                    <h2 class="card__title">The Show Rush</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioTame()" width="30px" height="30px">
+                    <audio id="tame" src="../../audios/canciones-sala-honorifica/tame-impala-lost-in-yesterday.mp3"></audio>
+                    <script>
+                        function toggleAudioTame() {
+                        var audio = document.getElementById('tame');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/31qVWUdRrlb8thMvts0yYL?si=CF6XPLsAQIuBA7ckToUdSA" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+
+
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/lost-in-the-dream-the-war-on-drugs.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">The War On Drugs</span>
+                    <h2 class="card__title">Lost In The Dream</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioTWOD()" width="30px" height="30px">
+                    <audio id="TWOD" src="../../audios/canciones-sala-honorifica/the-war-on-drugs-disappearing.mp3"></audio>
+                    <script>
+                        function toggleAudioTWOD() {
+                        var audio = document.getElementById('TWOD');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/51VxHZphGLsI7aUPqIkJaz?si=Ls-N6bp8Q8e7i3dJcKtG6g" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <p>Top <p style="color: #92c2b8;">&nbsp; Miriam.</p></p>
+        <p class="text p">"Recopilatorio 2" y "Azulejos de Coral" de Dellafuente junto a "Shars 2020" de Al Safir brillan por su autenticidad y<br> fusión de géneros. Dellafuente mezcla flamenco y trap con emoción pura, mientras que Al Safir envuelve <br>con su sonido nostálgico y callejero. Tres álbumes que conectan y emocionan.</p>
+        <div class="card__container">
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/azulejos-de-corales-dellafuente.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">DELLAFUENTE</span>
+                    <h2 class="card__title">Azulejos de Corales</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioAzulejos()" width="30px" height="30px">
+                    <audio id="Azulejos" src="../../audios/canciones-sala-honorifica/dellafuente-azulejos-de-corales.mp3"></audio>
+                    <script>
+                        function toggleAudioAzulejos() {
+                        var audio = document.getElementById('Azulejos');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/4q1iG9Jub9KRC25vZ0f6y4?si=FqeOzpaGSPWOySvYfCz3cg" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+
+
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/shars-al-safir.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Al Safir</span>
+                    <h2 class="card__title">Shars 2020</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioShars()" width="30px" height="30px">
+                    <audio id="Shars" src="../../audios/canciones-sala-honorifica/al-safir-shars-2020.mp3"></audio>
+                    <script>
+                        function toggleAudioShars() {
+                        var audio = document.getElementById('Shars');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/2a8XiNKgs13ufOWWuBFwrx?si=-whuI0qfR2int1QKsFBykA" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/recopilatorio-dellafeunte.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">DELLAFUENTE</span>
+                    <h2 class="card__title">Recopilatorio 2 (2013-2018)</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioRecopilatorio()" width="30px" height="30px">
+                    <audio id="recopilatorio" src="../../audios/canciones-sala-honorifica/dellafeunte-te-como-la-cara.mp3"></audio>
+                    <script>
+                        function toggleAudioRecopilatorio() {
+                        var audio = document.getElementById('recopilatorio');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/2UsytqqyHmKXYKmOmvA60E?si=EDRoG5zsSgCFmPhuBAqGww" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <p>Top de <p style="color: #57a6ad;">&nbsp;Diego.</p></p>
+        <p class="text p">"Sick Boi" de Ren, "Kyougen" de Ado y "Happiness and Correct Answers" de Takayan destacan por su autenticidad <br>y fuerza emocional. Ren combina hip-hop y folk con letras crudas, Ado impresiona con su voz teatral y energía explosiva,<br> y Takayan fusiona J-pop y rock con mensajes sinceros. Tres álbumes impactantes y únicos.</p>
+        <div class="card__container">
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/kyougen-ado.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Ado</span>
+                    <h2 class="card__title">Kyougen</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioAdo()" width="30px" height="30px">
+                    <audio id="Ado" src="../../audios/canciones-sala-honorifica/ada-odo.mp3"></audio>
+                    <script>
+                        function toggleAudioAdo() {
+                        var audio = document.getElementById('Ado');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/4muEF5biWb506ZojGMfHb7?si=OyHowEPoSfa47kuNJZRb4w" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+
+
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/sick-boi-ren.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Ren</span>
+                    <h2 class="card__title">Sick Boi</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioRen()" width="30px" height="30px">
+                    <audio id="Ren" src="../../audios/canciones-sala-honorifica/ren-sick-boi.mp3"></audio>
+                    <script>
+                        function toggleAudioRen() {
+                        var audio = document.getElementById('Ren');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/5qewHlxCihdHQP9fQGHUhH?si=cpmAjmjBTgm5GVSQbVk1Ow" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+
+
+            <article class="card__article">
+                <img src="../../imagenes/fotos-sala-honorifica/happiness-and-correct-answers-takayan.jpg" alt="novoamor" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Takayan</span>
+                    <h2 class="card__title">Happiness And Correct Answers</h2>
+                    <img src="../../imagenes/fotos-sala-honorifica/play.png" alt="Reproducir/Pausar" class="altavoz" onclick="toggleAudioTakayan()" width="30px" height="30px">
+                    <audio id="takayan" src="../../audios/canciones-sala-honorifica/takayan.mp3"></audio>
+                    <script>
+                        function toggleAudioTakayan() {
+                        var audio = document.getElementById('takayan');
+
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0; // Reinicia el audio al pausar
+                        }
+                    }
+                    </script>
+                    <a href="https://open.spotify.com/intl-es/album/1DPLTbGxA4c8hm8JZO03Eb?si=i8fYQHx9SLeaz2SYkeEj4w" class="card__button" target="_blank">Escuchar más</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

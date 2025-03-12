@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor centrado */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Líneas SVG */
+svg {
+    overflow: visible;
+    width: 300px;  /* Aumenta el tamaño del SVG */
+    height: 150px; /* Más espacio vertical */
+}
+
+/* Animaciones para las líneas */
+.loader svg line {
+    stroke-width: 5; /* Líneas más gruesas */
+    stroke: url(#color-gradient); /* Aplica el degradado */
+    transform-origin: center;
+    animation: waveAnimation 1.5s ease-in-out infinite alternate, colorMove 4s linear infinite;
+    filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.5)); /* Efecto de luz */
+}
+
+/* Separación mayor entre líneas */
+.loader svg line:nth-child(1) { x1: 30px; x2: 30px; }
+.loader svg line:nth-child(2) { x1: 60px; x2: 60px; }
+.loader svg line:nth-child(3) { x1: 90px; x2: 90px; }
+.loader svg line:nth-child(4) { x1: 120px; x2: 120px; }
+.loader svg line:nth-child(5) { x1: 150px; x2: 150px; } /* Línea central */
+.loader svg line:nth-child(6) { x1: 180px; x2: 180px; }
+.loader svg line:nth-child(7) { x1: 210px; x2: 210px; }
+.loader svg line:nth-child(8) { x1: 240px; x2: 240px; }
+.loader svg line:nth-child(9) { x1: 270px; x2: 270px; }
+
+/* Diferentes delays para el efecto de onda */
+.loader svg line:nth-child(1), 
+.loader svg line:nth-child(9) { animation-delay: 0s; } 
+
+.loader svg line:nth-child(2), 
+.loader svg line:nth-child(8) { animation-delay: 0.1s; } 
+
+.loader svg line:nth-child(3), 
+.loader svg line:nth-child(7) { animation-delay: 0.2s; } 
+
+.loader svg line:nth-child(4), 
+.loader svg line:nth-child(6) { animation-delay: 0.3s; } 
+
+.loader svg line:nth-child(5) { animation-delay: 0.35s; } /* Línea central más alta */
+
+/* Animación de onda de sonido con más diferencia de altura */
+@keyframes waveAnimation {
+    0% { transform: scaleY(0.6); } /* Líneas más cortas */
+    50% { transform: scaleY(1.2); } /* Expansión menos notoria */
+    100% { transform: scaleY(0.6); }
+}
+
+/* Cambio de color con más tonos fuertes */
+@keyframes colorMove {
+    0%   { stroke: #ff0000; } /* Rojo */
+    16%  { stroke: #ff8000; } /* Naranja fuerte */
+    32%  { stroke: #ffff00; } /* Amarillo fuerte */
+    48%  { stroke: #00ff00; } /* Verde intenso */
+    64%  { stroke: #0080ff; } /* Azul eléctrico */
+    80%  { stroke: #8000ff; } /* Morado vibrante */
+    100% { stroke: #ff0000; } /* Vuelve al rojo */
+}

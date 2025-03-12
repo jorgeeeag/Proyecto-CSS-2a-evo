@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');* {
+    margin:0;           /*PARA QUITAR EL MARGEN DE LA IZQUIERDA, DERECHA, ARRIBA Y ABAJO*/
+    padding:0;      /*PARA QUITAR EL MARGEN DE LA IZQUIERDA Y DERECHA*/
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {        
+    height: 100%;
+    overflow: hidden;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.contenedor {
+    height: 100%;
+    flex-grow: 1;
+    display: flex; 
+    background-color: #000000;
+}
+
+.recuadro {
+    width: 100%;
+    height: 100%;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+    font-family: Poppins;
+}
+.facil{
+    background-image:radial-gradient(#1b788f,#000000);
+    border-right: 2px solid rgb(0, 0, 0);
+}
+.dificil{
+    background-image:radial-gradient(#8f1b1b,#000000);
+    border-left: 2px solid rgb(0, 0, 0);
+}
+/* Efecto al pasar el mouse */
+
+.contenedor:hover {
+    flex-grow: 2;
+    transition: .3s;
+}
+
+.facil:hover {
+    background-image: radial-gradient(#2cc2e7,#000000);
+    color: rgb(0, 0, 0);
+}
+
+
+
+.dificil:hover {
+    background-image: radial-gradient(#c71c1c,#000000);
+    color: rgb(0, 0, 0);
+    
+}
+
+/* Efecto cuando el botón está seleccionado (enfocado) */
+.facil:focus {
+    border: 5px solid rgb(0, 238, 255);
+    color: #97eaff;
+    text-shadow:2px 5px 10px #000000;
+}
+.dificil:focus {
+    border: 5px solid #ff0000;
+    color: #ff4545;
+    text-shadow:2px 5px 10px #000000;
+}

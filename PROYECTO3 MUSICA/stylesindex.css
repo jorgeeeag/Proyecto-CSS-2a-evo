@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Resetea todos los elementos HTML a un estado base consistente */
+* {
+    border: 0;             /* Elimina todos los bordes */
+    margin: 0;             /* Elimina todos los márgenes externos */
+    padding: 0;            /* Elimina todos los rellenos internos */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho/alto total */
+    font-family: "Poppins", sans-serif; /* Establece la fuente principal */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    min-height: 100vh;      /* Asegura que ocupe al menos toda la altura de la ventana */
+    background: linear-gradient(160deg,#c9ddd1, #92c2b8, #57a6ad, #0088aa, #166f94, #1c577c, #1a4065, #142b4e); /* Crea un degradado de colores */
+    background-size: cover;  /* Escala el fondo para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+/* Estilos para el botón de reproducción */
+.play__button {
+    position: fixed;         /* Fija el botón en la pantalla independientemente del scroll */
+}
+
+/* Estilos para párrafos con clase p */
+.p {
+    font-size: 40px;         /* Establece un tamaño de texto grande */
+    font-family: 'Poppins', sans-serif; /* Define la fuente */
+    font-weight: 700;        /* Establece el grosor de la fuente (negrita) */
+    color: #142b4e;          /* Define el color del texto (azul oscuro) */
+}
+
+/* Estilos para el encabezado principal */
+.header {
+    position: fixed;         /* Fija el encabezado en la parte superior al hacer scroll */
+    top: 0;                  /* Lo coloca en la parte superior */
+    left: 0;                 /* Lo coloca desde el borde izquierdo */
+    width: 100%;             /* Ocupa todo el ancho de la pantalla */
+    padding: 20px 100px;     /* Añade espacio interior (arriba/abajo 20px, izquierda/derecha 100px) */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente blanco */
+    backdrop-filter: blur(10px); /* Aplica un efecto de desenfoque al fondo */
+    display: flex;           /* Usa modelo de caja flexible */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center;     /* Centra verticalmente los elementos */
+    z-index: 100;            /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade sombra sutil */
+}
+
+/* Estilos para el logo */
+.logo {
+    font-size: 32px;         /* Tamaño de texto grande */
+    color: #142b4e;          /* Color azul oscuro */
+    text-decoration: none;   /* Elimina el subrayado (si es un enlace) */
+    font-weight: 700;        /* Texto en negrita */
+    text-shadow: 0 0 50px #0088aa; /* Añade resplandor alrededor del texto */
+    margin-top: 10px;        /* Añade espacio superior */
+}
+
+/* Estilos para los enlaces en la barra de navegación */
+.navbar a {
+    position: relative;      /* Permite posicionar elementos secundarios relativos a este */
+    font-size: 18px;         /* Tamaño de texto mediano */
+    color: #ffffff;          /* Color blanco */
+    font-weight: 500;        /* Semi-negrita */
+    text-decoration: none;   /* Elimina subrayado */
+    margin-left: 40px;       /* Espacio entre enlaces */
+}
+
+/* Crea un pseudo-elemento para el efecto de subrayado animado */
+.navbar a::before {
+    content: '';             /* Contenido vacío necesario para mostrar el pseudo-elemento */
+    position: absolute;      /* Posicionamiento absoluto respecto al enlace */
+    top: 100%;               /* Lo coloca debajo del texto */
+    left: 0;                 /* Alineado a la izquierda */
+    width: 0;                /* Inicialmente sin ancho */
+    height: 2px;             /* Altura de 2px (línea fina) */
+    background: #ffffff;     /* Color blanco */
+    transition: .3s;         /* Animación suave de 0.3 segundos */
+}
+
+/* Cambia el ancho del subrayado al pasar el ratón */
+.navbar a:hover::before {
+    width: 100%;             /* Expande el subrayado al 100% del ancho */
+}
+
+/* Estilos para la sección principal (hero) */
+.hero-section {
+    display: flex;           /* Usa modelo de caja flexible */
+    align-items: center;     /* Centra verticalmente los elementos */
+    justify-content: flex;   /* Nota: debería ser justify-content: flex-start o similar */
+    max-width: 1600px;       /* Ancho máximo */
+    padding: 120px 100px;    /* Espaciado interior grande */
+    min-height: 100vh;       /* Altura mínima igual a la altura de la ventana */
+}
+
+/* Estilos para el texto principal del hero */
+.hero-text {
+    font-size: 78px;         /* Texto muy grande */
+    font-weight: 700;        /* Negrita */
+    color: #ffffff;          /* Color blanco */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para mejorar legibilidad */
+    flex: 0 1 auto;          /* No crece, puede encogerse, tamaño automático */
+    line-height: 1.1;        /* Espacio entre líneas reducido */
+    max-width: 800px;        /* Ancho máximo del texto */
+}
+
+/* Estilos para las itálicas dentro del texto principal */
+.hero-text i {
+    color: #142b4e;          /* Color azul oscuro */
+    font-style: normal;      /* Neutraliza la cursiva habitual de <i> */
+    display: inline-block;   /* Trata el elemento como bloque en línea */
+    text-shadow: 0 0 40px #57a6ad; /* Añade resplandor azul-verdoso */
+}
+
+/* Estilos para el contenedor del carrusel */
+.carousel-container {
+    position: relative;      /* Permite posicionar elementos secundarios */
+    width: 600px;            /* Ancho fijo */
+    height: 400px;           /* Alto fijo */
+    perspective: 1200px;     /* Perspectiva 3D */
+    background: transparent; /* Fondo transparente */
+    overflow: visible;       /* Permite que elementos sobrepasen los límites */
+    margin-left: auto;       /* Empuja el carrusel a la derecha */
+}
+
+/* Estilos para las tarjetas del carrusel */
+.carousel-card {
+    position: absolute;      /* Posicionamiento absoluto dentro del contenedor */
+    top: 50%;                /* Centrado vertical */
+    left: 50%;               /* Centrado horizontal */
+    width: 350px;            /* Ancho fijo */
+    height: 350px;           /* Alto fijo */
+    background: #fff;        /* Fondo blanco */
+    border-radius: 10px;     /* Bordes redondeados */
+    overflow: hidden;        /* Recorta contenido que sobrepase los límites */
+    transform-style: preserve-3d; /* Mantiene efecto 3D en hijos */
+    backface-visibility: hidden; /* Oculta reverso de elementos al rotarlos */
+    display: flex;           /* Usa modelo de caja flexible */
+    align-items: center;     /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transform: translate(-50%, -50%) scale(0.8) translateZ(0); /* Centrado y escalado */
+    z-index: 1;              /* Orden de apilamiento */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+}
+
+/* Estilos para las imágenes dentro de las tarjetas */
+.carousel-card img {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    height: 100%;            /* Ocupa todo el alto disponible */
+    object-fit: cover;       /* Escala la imagen cubriendo toda el área sin distorsión */
+}
+
+/* Asigna animaciones a cada tarjeta del carrusel */
+.carousel-card:nth-child(1) { animation: anim1 12s infinite cubic-bezier(0.45, 0, 0.55, 1); } /* Primera tarjeta */
+.carousel-card:nth-child(2) { animation: anim2 12s infinite cubic-bezier(0.45, 0, 0.55, 1); } /* Segunda tarjeta */
+.carousel-card:nth-child(3) { animation: anim3 12s infinite cubic-bezier(0.45, 0, 0.55, 1); } /* Tercera tarjeta */
+
+/* Define la animación para la primera tarjeta */
+@keyframes anim1 {
+    0%   { transform: translate(-50%, -50%) translateX(0)     scale(1)   translateZ(100px); z-index: 3; } /* Posición inicial: centrada, grande, al frente */
+    33%  { transform: translate(-50%, -50%) translateX(-330px) scale(0.8) translateZ(0);   z-index: 1; } /* Posición a la izquierda */
+    66%  { transform: translate(-50%, -50%) translateX(330px)  scale(0.8) translateZ(0);   z-index: 1; } /* Posición a la derecha */
+    100% { transform: translate(-50%, -50%) translateX(0)     scale(1)   translateZ(100px); z-index: 3; } /* Vuelve a posición inicial */
+}
+
+/* Define la animación para la segunda tarjeta */
+@keyframes anim2 {
+    0%   { transform: translate(-50%, -50%) translateX(330px)  scale(0.8) translateZ(0);   z-index: 1; } /* Empieza a la derecha */
+    33%  { transform: translate(-50%, -50%) translateX(0)      scale(1)   translateZ(100px); z-index: 3; } /* Centrada y al frente */
+    66%  { transform: translate(-50%, -50%) translateX(-330px) scale(0.8) translateZ(0);   z-index: 1; } /* A la izquierda */
+    100% { transform: translate(-50%, -50%) translateX(330px)  scale(0.8) translateZ(0);   z-index: 1; } /* Vuelve a la derecha */
+}
+
+/* Define la animación para la tercera tarjeta */
+@keyframes anim3 {
+    0%   { transform: translate(-50%, -50%) translateX(-330px) scale(0.8) translateZ(0);   z-index: 1; } /* Empieza a la izquierda */
+    33%  { transform: translate(-50%, -50%) translateX(330px)  scale(0.8) translateZ(0);   z-index: 1; } /* A la derecha */
+    66%  { transform: translate(-50%, -50%) translateX(0)      scale(1)   translateZ(100px); z-index: 3; } /* Centrada y al frente */
+    100% { transform: translate(-50%, -50%) translateX(-330px) scale(0.8) translateZ(0);   z-index: 1; } /* Vuelve a la izquierda */
+}
+
+/* Estilos para la sección con fondo blanco */
+.seccion-blanca {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    min-height: 800px;       /* Altura mínima fija */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 40px 20px;      /* Relleno interior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    justify-items: center;   /* Centra elementos en grid (si aplicable) */
+    padding-top: 90px;       /* Relleno superior adicional */
+}
+
+/* Estilos para portadas de álbum */
+.album-cover {
+    position: relative;      /* Permite posicionar elementos secundarios */
+    aspect-ratio: 1;         /* Mantiene proporción cuadrada (ancho=alto) */
+}
+
+/* Estilos para las tarjetas - comienza una nueva sección */
+* {
+    margin: 0;               /* Elimina márgenes (redundante con el primer selector) */
+    padding: 0;              /* Elimina relleno (redundante con el primer selector) */
+    box-sizing: border-box;  /* Incluye padding y borde en dimensiones (redundante) */
+    font-family: 'Poppins', sans-serif; /* Define fuente (redundante) */
+}
+
+/* Contenedor para las tarjetas */
+.container {
+    display: flex;           /* Usa modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;     /* Centra verticalmente los elementos */
+    max-width: 1200px;       /* Ancho máximo */
+    flex-wrap: wrap;         /* Permite que los elementos se envuelvan a líneas nuevas */
+    padding: 40px 0;         /* Relleno vertical */
+}
+
+/* Estilos para las tarjetas dentro del contenedor */
+.container .card {
+    position: relative;      /* Permite posicionar elementos secundarios */
+    width: 320px;            /* Ancho fijo */
+    height: 440px;           /* Alto fijo */
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                5px 5px 5px rgba(0,0,0,0.05),
+                -5px -5px 5px rgba(255,255,255,0.5); /* Sombra compleja con efecto neomórfico */
+    border-radius: 15px;     /* Bordes muy redondeados */
+    margin: 30px;            /* Margen exterior */
+}
+
+/* Estilos para la caja dentro de la tarjeta */
+.container .card .box {
+    position: absolute;      /* Posicionamiento absoluto dentro de la tarjeta */
+    top: 20px;               /* Margen superior desde el borde de la tarjeta */
+    left: 20px;              /* Margen izquierdo desde el borde de la tarjeta */
+    right: 20px;             /* Margen derecho desde el borde de la tarjeta */
+    bottom: 20px;            /* Margen inferior desde el borde de la tarjeta */
+    background: #ebf5fc;     /* Fondo azul muy claro */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra suave */
+    border-radius: 15px;     /* Bordes muy redondeados */
+    display: flex;           /* Usa modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;     /* Centra verticalmente los elementos */
+    transition: 0.5s;        /* Transición suave para efectos hover */
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.container .card:hover .box {
+    transform: translateY(-50px); /* Eleva la caja */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4); /* Sombra más pronunciada */
+    background: linear-gradient(45deg,#c9ddd1, #92c2b8, #57a6ad, #0088aa, #166f94, #1a4065, #142b4e); /* Degradado de colores */
+}
+
+/* Estilos para el contenido dentro de la caja */
+.container .card .box .content {
+    padding: 20px;           /* Relleno interior */
+    text-align: center;      /* Alinea el texto al centro */
+}
+
+/* Estilos para encabezados h2 dentro del contenido */
+.container .card .box .content h2 {
+    position: absolute;      /* Posicionamiento absoluto dentro del contenido */
+    top: -10px;              /* Posición superior */
+    right: 30px;             /* Posición derecha */
+    font-size: 8em;          /* Tamaño muy grande */
+    color: rgba(0,0,0,0.05); /* Color muy claro, casi invisible */
+    transition: 0.5s;        /* Transición suave */
+}
+
+/* Cambio de color para h3 al pasar el ratón sobre la tarjeta */
+.container .card:hover .box .content h3 {
+    color: #fff;             /* Cambia a color blanco */
+}
+
+/* Mantiene el color de h2 al pasar el ratón sobre la tarjeta */
+.container .card:hover .box .content h2 {
+    color: rgba(0,0,0,0.05); /* Mantiene el color muy claro */
+}
+
+/* Estilos para encabezados h3 dentro del contenido */
+.container .card .box .content h3 {
+    font-size: 1.8em;        /* Tamaño grande */
+    color: #777;             /* Color gris */
+    z-index: 1;              /* Asegura que esté por encima del h2 */
+    transition: 0,5s;        /* Transición suave (nota: debería ser 0.5s) */
+}
+
+/* Estilos para párrafos dentro del contenido */
+.container .card .box .content p {
+    font-size: 1em;          /* Tamaño normal */
+    font-weight: 300;        /* Peso ligero */
+    color: #777;             /* Color gris */
+    z-index: 1;              /* Asegura que esté por encima del h2 */
+    transition: 0.5s;        /* Transición suave */
+}
+
+/* Cambio de color para párrafos al pasar el ratón sobre la tarjeta */
+.container .card:hover .box .content p {
+    color: #fff;             /* Cambia a color blanco */
+}
+
+/* Estilos para enlaces dentro del contenido */
+.container .card .box .content a {
+    position: relative;      /* Permite posicionar elementos secundarios */
+    display: inline-block;   /* Actúa como bloque en línea */
+    padding: 8px 20px;       /* Relleno interior */
+    background: #03a9f4;     /* Fondo azul */
+    margin-top: 15px;        /* Margen superior */
+    border-radius: 20px;     /* Bordes muy redondeados */
+    color: fff;              /* Error: debería ser #fff */
+    text-decoration: none;   /* Elimina subrayado */
+    font-weight: 400;        /* Peso normal */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para efecto de elevación */
+}
+
+/* Cambio de color de fondo para enlaces al pasar el ratón sobre la tarjeta */
+.container .card:hover .box .content a {
+    background: #ff56ff;     /* Cambia a color rosa */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background: #57a6ad;     /* Fondo azul-verdoso */
+    padding: 30px 0px;       /* Relleno vertical */
+    font-family: 'Poppins', sans-serif; /* Define fuente */
+    text-align: center;      /* Alinea texto al centro */
+}
+
+/* Estilos para filas dentro del pie de página */
+.footer .row {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    margin: 1% 0%;           /* Margen vertical */
+    padding: 0.6% 0%;        /* Relleno vertical */
+    color: #fff;             /* Color blanco */
+    font-size: 0.8em;        /* Tamaño pequeño */
+}
+
+/* Estilos para enlaces dentro de filas del pie de página */
+.footer .row a {
+    text-decoration: none;   /* Elimina subrayado */
+    color: #fff;             /* Color blanco */
+    transition: 0.5s;        /* Transición suave */
+}
+
+/* Efecto al pasar el ratón sobre enlaces del pie de página */
+.footer .row a:hover {
+    color: #000;             /* Cambia a color negro */
+}
+
+/* Estilos para listas dentro de filas del pie de página */
+.footer .row ul {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+}
+
+/* Estilos para elementos de lista dentro de filas del pie de página */
+.footer .row ul li {
+    display: inline-block;   /* Muestra como bloque en línea (horizontal) */
+    margin: 0px 30px;        /* Margen horizontal */
+}
+
+/* Estilos para iconos dentro de enlaces del pie de página */
+.footer .row a i {
+    font-size: 2em;          /* Tamaño grande */
+    margin: 0% 1%;           /* Margen horizontal */
+}
