@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #f8f9fa, #e9ecef);
+}
+
+
+
+
+/*FOTO + TITULO CON ANIMACION*/
+
+
+
+
+
+.imagen-titulo {
+  background: url("../../../../imagenes/proyectos/proyectos.jpg") center/cover;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+.imagen-titulo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.titulo-principal {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 0 auto 2rem;
+  position: relative;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-principal::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 50%;
+  bottom: -10px;
+  background: #fff;
+  transform: translateX(-50%);
+  animation: underline 2s ease forwards;
+}
+
+@keyframes underline {
+  to { width: 30%; }
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+
+
+/*CUADROS CON EFECTO HOVER (FOTO + TTIULO*/
+
+
+
+
+
+.cuadro-completo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rem;
+  margin-bottom: 3rem;
+}
+
+.cuadro {
+  width: 100%;
+  height: 25rem;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contenedor:hover .cuadro:not(:hover) {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+.cuadro:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.imagen-fondo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cuadro:hover .imagen-fondo {
+  filter: brightness(1.05) saturate(1.1);
+  transform: scale(1.02);
+}
+
+.titulo-debajo {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.titulo-debajo::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: #007BFF;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.cuadro-completo:hover .titulo-debajo {
+  color: #007BFF;
+}
+
+.cuadro-completo:hover .titulo-debajo::after {
+  width: 30%;
+}

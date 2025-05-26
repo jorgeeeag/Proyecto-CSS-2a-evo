@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Jorge Armenta Gil</title>
+    <link rel="stylesheet" href="proyectos.css">
+    <link rel="icon" type="image/png" href="../../imagenes/logo.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="proyectos-contenedor">
+    <div class="imagen-titulo">
+      <h2 class="titulo-principal">Mis Proyectos</h2>
+    </div>
+
+    <div class="contenedor">
+      <!-- Cortometrajes -->
+      <div class="cuadro-completo">
+          <div class="cuadro" id="cortometrajes">
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/cortometrajes/informativos.jpg'); opacity: 1;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/cortometrajes/sin_palabras.jpg'); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/cortometrajes/post_it.jpg'); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/cortometrajes/fiebre.jpg '); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/cortometrajes/en_tus_ojos.jpg'); opacity: 0;"></div>
+          </div>
+          <p class="titulo-debajo">Cortometrajes</p>
+      </div>
+
+      <!-- Programación -->
+      <div class="cuadro-completo">
+        
+          <div class="cuadro" id="programacion">
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/programacion/carme.jpg'); opacity: 1;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/programacion/navidad.jpg'); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/programacion/efectos_css.jpg'); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/programacion/mono.jpg'); opacity: 0;"></div>
+              <div class="imagen-fondo" style="background-image: url('../../imagenes/proyectos/programacion/contrl.jpg'); opacity: 0;"></div>
+          </div>
+          <p class="titulo-debajo">Programación</p>
+        
+      </div>
+    </div>
+</section>
+    <script>
+        function configurarSlideshow(id, intervalo = 800) {
+            const cuadro = document.getElementById(id);
+            const imagenes = cuadro.querySelectorAll('.imagen-fondo');
+            let indiceActual = 0;
+            let intervaloSlideshow;
+
+            function siguienteImagen() {
+                imagenes[indiceActual].style.opacity = 0;
+                indiceActual = (indiceActual + 1) % imagenes.length;
+                imagenes[indiceActual].style.opacity = 1;
+            }
+
+            cuadro.addEventListener('mouseenter', () => {
+                intervaloSlideshow = setInterval(siguienteImagen, intervalo);
+            });
+
+            cuadro.addEventListener('mouseleave', () => {
+                clearInterval(intervaloSlideshow);
+                imagenes.forEach((img, i) => {
+                    img.style.opacity = i === 0 ? 1 : 0;
+                });
+                indiceActual = 0;
+            });
+        }
+
+        configurarSlideshow('cortometrajes');
+        configurarSlideshow('programacion');
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+
+
+
+.experiencia {
+  position: relative;
+  width: 100%;    
+}
+
+.experiencia::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #ccc;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+
+
+
+/*LINEA VERTICAL*/
+
+
+
+
+
+.scroll-linea {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(to bottom, #ffffff, #009efa);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+  border-radius: 2px;
+  transition: height 1.5s ease;
+}
+
+
+
+
+
+/*IMAGEN*/
+
+
+
+
+
+.imagen-titulo {
+  background-image: url("../../imagenes/experiencia_laboral/experiencia.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 4rem;
+  overflow: hidden; 
+}
+
+.imagen-titulo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 1;
+}
+
+
+
+
+
+/*TITULO*/
+
+
+
+
+
+.titulo-principal {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto 2rem;
+  z-index: 2;
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-principal::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 50%;
+  bottom: -10px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  animation: underline 2s ease forwards;
+}
+
+@keyframes underline {
+  to {
+    width: 30%;
+  }
+}
+
+
+
+
+
+
+/* ITEMS EXPERIENCIA + ANIMACION SUBIR DESVANECIENDOSE */
+
+
+
+
+
+
+.experiencia-item {
+  position: relative;
+  width: 100%;
+  padding: 2rem 17rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  gap: 10rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(10rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.experiencia-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anios{
+  font-weight: 400;
+  font-size: 1rem;
+  color: #888;
+  margin-left: 10px;
+}
+
+.texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+.responsabilidades {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.responsabilidades li {
+  margin-bottom: 0.5rem;  
+  position: relative;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+
+.texto h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.texto h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width:10rem;
+  height: 3px;
+  background: linear-gradient(to right, #00bfff, #007bff);
+  border-radius: 5px;
+}
+
+.texto p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+}
+
+.imagen {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagen img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imagen img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+/* RESPONSIVE DEEPSEEK */
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .experiencia-item {
+    padding: 60px 10rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .experiencia-item {
+    padding: 60px 5rem;
+  }
+  
+  .titulo-principal {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experiencia-item {
+    padding: 40px 2rem;
+    flex-direction: column;
+  }
+  
+  .texto, .imagen {
+    min-width: 100%;
+  }
+  
+  .titulo-principal {
+    font-size: 2rem;
+  }
+  
+  /* Ajustes para móviles - animación más simple */
+  .experiencia-item {
+    transform: translateX(0) !important;
+  }
+}

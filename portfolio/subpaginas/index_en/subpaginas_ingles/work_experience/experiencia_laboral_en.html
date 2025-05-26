@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Experience - Jorge Armenta Gil</title>
+  <link rel="stylesheet" href="experiencia_laboral_en.css">
+  <link rel="icon" type="image/png" href="../../../../imagenes/logo.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ <body>
+  
+  <section class="experiencia content">
+    
+    <div class="imagen-titulo">
+      <h2 class="titulo-principal">Work Experience</h2>
+    </div>
+    <div class="scroll-linea"></div>
+
+    <div class="experiencia-item">
+      <div class="texto">
+        <h3>Event Organization and Staff.<span class="anios">2021-2023</span></h3>
+        <p>Route planner and staff member for the “City of Getafe Half Marathon”.</p>
+      </div>
+      <div class="imagen">
+        <img src="../../../../imagenes/experiencia_laboral/getafe.jpeg" alt="Maratón de Getafe">
+      </div>
+    </div>
+
+    <div class="experiencia-item">
+      <div class="imagen">
+        <img src="../../../../imagenes/experiencia_laboral/la_Caja_de_musica.png" alt="La Caja De Música">
+      </div>
+      <div class="texto">
+        <h3>Press Cameraman.<span class="anios">2022</span></h3>
+        <p>Operated interview camera for “La Caja de Música” magazine at the Ágatha Ruiz de la Prada fashion show and the premiere of the Atresmedia series “Déjate Ver”.</p>
+      </div>
+    </div>
+
+    <div class="experiencia-item">
+      <div class="texto">
+        <h3>Caregiver.<span class="anios">2022</span></h3>
+        <p>Provided maintenance and care for children, adolescents, and elderly individuals.</p>
+      </div>
+      <div class="imagen">
+        <img src="../../../../imagenes/experiencia_laboral/cuidador.jpg" alt="Cuidador">
+      </div>
+    </div>
+
+    <div class="experiencia-item">
+  <div class="imagen">
+    <img src="../../../../imagenes/experiencia_laboral/tecnon.png" alt="Tecnon Sistemas">
+  </div>
+  <div class="texto">
+    <h3>Communication and Systems Technician<span class="anios">2023-2024</span></h3>
+    <p>At Tecnon Sistemas, I was responsible for the implementation and maintenance of technological infrastructures, with a special focus on:</p>
+    <ul class="responsabilidades">
+      <li>Installation and configuration of electronic devices and communication systems</li>
+      <li>Technology deployment for the ACING Military Base (Army Engineers Academy)</li>
+      <li>System implementation for ACS (Actividades de Construcción y Servicios, S.A.)</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="experiencia-item">
+      <div class="texto">
+        <h3>Employee at McDonald's.<span class="anios">2024-2025</span></h3>
+        <p>Worker at McDonald's performing customer service tasks, order preparation, cleanliness maintenance, and kitchen support.</p>
+      </div>
+      <div class="imagen">
+        <img src="../../../../imagenes/experiencia_laboral/macas.jpg" alt="McDonald´s">
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const elementos = document.querySelectorAll('.experiencia-item');
+  const scrollLinea = document.querySelector('.scroll-linea');
+  const section = document.querySelector('.experiencia');
+  
+  // Función para verificar si un elemento está en el viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight * 0.75) && 
+      rect.bottom >= (window.innerHeight * 0.25)
+    );
+  }
+  
+  // Función para manejar el scroll
+  function handleScroll() {
+    // Manejar la línea de scroll
+    const rect = section.getBoundingClientRect();
+    const scrollPosition = window.scrollY;
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    const windowHeight = window.innerHeight;
+    
+    // Calcular porcentaje de scroll dentro de la sección
+    let porcentaje = 0;
+    
+    // Si estamos antes de la sección
+    if (scrollPosition < sectionTop) {
+      porcentaje = 0;
+    } 
+    // Si estamos dentro de la sección
+    else if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom - windowHeight) {
+      porcentaje = ((scrollPosition - sectionTop) / (sectionBottom - windowHeight - sectionTop)) * 100;
+    } 
+    // Si hemos pasado la sección
+    else {
+      porcentaje = 100;
+    }
+    
+    scrollLinea.style.height = porcentaje + "%";
+    
+    // Manejar visibilidad de elementos
+    elementos.forEach((element, index) => {
+      if (isInViewport(element)) {
+        element.classList.add('visible');
+      }
+    });
+  }
+  
+  // Mostrar elementos visibles al cargar
+  handleScroll();
+  
+  // Escuchar el evento scroll con throttling
+  let isScrolling;
+  window.addEventListener('scroll', function() {
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(handleScroll, 50);
+  });
+  
+  // Desactivar animación si el usuario prefiere movimiento reducido
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReducedMotion.matches) {
+    elementos.forEach(element => {
+      element.classList.add('visible');
+    });
+  }
+});
+  </script>
+</body>
+</html>

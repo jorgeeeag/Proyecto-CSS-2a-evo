@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  overflow-y: hidden;
+}
+
+.contacto-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5c5c5c;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  
+}
+
+.contacto-texto {
+  flex: 1;
+  padding: 60px;
+  max-width: 600px;
+  margin-left: 5rem;
+}
+
+
+
+
+
+/*TITULO + ANIMACION*/
+
+
+
+
+.titulo-principal {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto 2rem;
+  z-index: 2;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.titulo-principal::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0; /* comienza desde la izquierda */
+  height: 4px;
+  width: 0;
+  background: #ffffff;
+  animation: underline 2s ease forwards;
+}
+
+@keyframes underline {
+  to {
+    width: 50%; /* crece desde el lado izquierdo */
+  }
+}
+
+.descripcion {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+/*EMAIL + WHASTAPP Y BOTONES*/
+
+
+
+
+.email {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  
+}
+
+.whatsapp {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  
+}
+
+.botones-contacto {
+  display: flex;
+  gap: 15px;
+  
+}
+
+.btn-contacto,
+.btn-whatsapp {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-contacto {
+  background-color: #fff;
+  color: #333;
+}
+
+.btn-contacto:hover {
+  background-color: #ddd;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.contacto-imagen {
+  flex: 1;
+  position: relative;
+  clip-path: ellipse(100% 100% at 100% 0%);
+  height: 100%;
+}
+
+.contacto-imagen img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform; /* Optimización para animación */
+  transform-origin: center center; /* Zoom desde el centro */
+}
+
+.contacto-imagen img:hover {
+  transform: scale(1.1);
+}
+
+
